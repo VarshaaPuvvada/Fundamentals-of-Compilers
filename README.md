@@ -40,36 +40,39 @@ A collection of programs focused on fundamental concepts of compiler design, inc
    - [NFA to DFA Implementation](NFA_To_DFA/NFA_To_DFA.c)
 
 ## 🚀 **Compile and Execute the Code**
-## 🔹 For C Programs
-    Open your terminal and navigate to the program directory.
-    Compile the program using gcc:
-      gcc filename.c -o outpu
-    Run the compiled program:
-      ./output
-## 🔹 For LEX Programs
-   Use the lex tool to generate the scanner:
-      flex filename.l
-   Compile the generated C code using gcc:
-      gcc lex.yy.c 
-   Execute the program:
-      a.exe
-## 🔹 For LEX + YACC Programs
-   Use the lex tool to process the .lex file:
-      flex filename.l
-   Use the yacc tool to process the .y file:
-      bison -dy filename.y
-   Compile the generated files with gcc:
-      gcc lex.yy.c y.tab.c 
-   Run the final executable:
-      a.exe
+   🔹 For C Programs
+    Open your terminal and navigate to the program directory.<br>
+    Compile the program using gcc:<br>
+      &nbsp;&nbsp;&nbsp;gcc filename.c -o output<br>
+    Run the compiled program:<br>
+      &nbsp;&nbsp;&nbsp;./output<br>
+  🔹 For LEX Programs<br>
+   Use the lex tool to generate the scanner:<br>
+      &nbsp;&nbsp;&nbsp;flex filename.l<br>
+   Compile the generated C code using gcc:<br>
+      &nbsp;&nbsp;&nbsp;gcc lex.yy.c<br>
+   Execute the program:<br>
+      &nbsp;&nbsp;&nbsp;a.exe<br>
+  🔹 For LEX + YACC Programs<br>
+   Use the lex tool to process the .lex file:<br>
+      &nbsp;&nbsp;&nbsp;flex filename.l<br>
+   Use the yacc tool to process the .y file:<br>
+      &nbsp;&nbsp;&nbsp;bison -dy filename.y<br>
+   Compile the generated files with gcc:<br>
+      &nbsp;&nbsp;&nbsp;gcc lex.yy.c y.tab.c<br>
+   Run the final executable:<br>
+      &nbsp;&nbsp;&nbsp;a.exe<br>
 
 ## 💡 **Features**
 Covers essential compiler design topics.
+
 Demonstrates practical applications using C, LEX, and YACC.
 
 ## 🛠️ **Technologies Used**
 Programming Languages: C
+
 Tools: LEX, YACC
+
 Platform: Windows 
 
 ## 🤝 **Contributing**
