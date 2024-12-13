@@ -40,20 +40,20 @@ A collection of programs focused on fundamental concepts of compiler design, inc
    - [NFA to DFA Implementation](NFA_To_DFA/NFA_To_DFA.c)
 
 ## 🚀 **Compile and Execute the Code**
-🔹 For C Programs
+## 🔹 For C Programs
     Open your terminal and navigate to the program directory.
     Compile the program using gcc:
       gcc filename.c -o outpu
     Run the compiled program:
       ./output
-🔹 For LEX Programs
+## 🔹 For LEX Programs
    Use the lex tool to generate the scanner:
       flex filename.l
    Compile the generated C code using gcc:
       gcc lex.yy.c 
    Execute the program:
       a.exe
-🔹 For LEX + YACC Programs
+## 🔹 For LEX + YACC Programs
    Use the lex tool to process the .lex file:
       flex filename.l
    Use the yacc tool to process the .y file:
