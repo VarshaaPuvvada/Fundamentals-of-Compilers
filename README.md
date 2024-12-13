@@ -10,8 +10,6 @@ A collection of programs focused on fundamental concepts of compiler design, inc
 
 2. **Lexical Analysis**
    - [Lexical Analyzer (Array Input)](LexicalAnalyzers/LexicalAnalyzer_Array.c)
-   - [Lexical Analyzer (Text File Input)](LexicalAnalyzers/LexicalAnalyzer_TextFile.c)
-   - [Lexical Analyzer (User Input)](LexicalAnalyzers/LexicalAnalyzer_UserInput.c)
    - [Lexical Analyzer using LEX](LexicalAnalyzers/LexicalAnalyzer_LEX.l)
 
 3. **Parsing**
@@ -64,16 +62,13 @@ A collection of programs focused on fundamental concepts of compiler design, inc
       &nbsp;&nbsp;&nbsp;a.exe<br>
 
 ## 💡 **Features**
-Covers essential compiler design topics.
-
+Covers essential compiler design topics.<br>
 Demonstrates practical applications using C, LEX, and YACC.
 
 ## 🛠️ **Technologies Used**
-Programming Languages: C
-
-Tools: LEX, YACC
-
-Platform: Windows 
+Programming Languages: C<br>
+Tools: LEX, YACC<br>
+Platform: Windows<br>
 
 ## 🤝 **Contributing**
 Contributions are welcome! If you have ideas for improvement or want to add more examples, feel free to fork this repository and create a pull request.
