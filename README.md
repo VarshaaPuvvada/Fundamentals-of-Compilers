@@ -41,25 +41,25 @@ A collection of programs focused on fundamental concepts of compiler design, inc
    🔹 For C Programs
     Open your terminal and navigate to the program directory.<br>
     Compile the program using gcc:<br>
-      &nbsp;&nbsp;&nbsp;gcc filename.c -o output<br>
+      gcc filename.c -o output<br>
     Run the compiled program:<br>
-      &nbsp;&nbsp;&nbsp;./output<br>
+      ./output<br>
   🔹 For LEX Programs<br>
    Use the lex tool to generate the scanner:<br>
-      &nbsp;&nbsp;&nbsp;flex filename.l<br>
+      flex filename.l<br>
    Compile the generated C code using gcc:<br>
-      &nbsp;&nbsp;&nbsp;gcc lex.yy.c<br>
+      gcc lex.yy.c<br>
    Execute the program:<br>
-      &nbsp;&nbsp;&nbsp;a.exe<br>
+      a.exe<br>
   🔹 For LEX + YACC Programs<br>
    Use the lex tool to process the .lex file:<br>
-      &nbsp;&nbsp;&nbsp;flex filename.l<br>
+      flex filename.l<br>
    Use the yacc tool to process the .y file:<br>
-      &nbsp;&nbsp;&nbsp;bison -dy filename.y<br>
+      bison -dy filename.y<br>
    Compile the generated files with gcc:<br>
-      &nbsp;&nbsp;&nbsp;gcc lex.yy.c y.tab.c<br>
+      gcc lex.yy.c y.tab.c<br>
    Run the final executable:<br>
-      &nbsp;&nbsp;&nbsp;a.exe<br>
+      a.exe<br>
 
 ## 💡 **Features**
 Covers essential compiler design topics.<br>
