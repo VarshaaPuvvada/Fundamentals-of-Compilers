@@ -5,29 +5,29 @@ A collection of programs focused on fundamental concepts of compiler design, inc
 
 1. **DFA Construction**
    - [DFA from Regular Grammar](DFA/DFA_From_Regular_Grammar.c)
-   - [DFA to Accept Odd 0’s and Even 1’s](DFA/DFA_Odd0s_Even1s.lex)
-   - [DFA to Accept Strings Ending with 11](DFA/DFA_Ending_11.lex)
+   - [DFA to Accept Odd 0’s and Even 1’s](DFA/DFA_Odd0s_Even1s.l)
+   - [DFA to Accept Strings Ending with 11](DFA/DFA_Ending_11.l)
 
 2. **Lexical Analysis**
    - [Lexical Analyzer (Array Input)](LexicalAnalyzers/LexicalAnalyzer_Array.c)
    - [Lexical Analyzer (Text File Input)](LexicalAnalyzers/LexicalAnalyzer_TextFile.c)
    - [Lexical Analyzer (User Input)](LexicalAnalyzers/LexicalAnalyzer_UserInput.c)
-   - [Lexical Analyzer using LEX](LexicalAnalyzers/LexicalAnalyzer_LEX.lex)
+   - [Lexical Analyzer using LEX](LexicalAnalyzers/LexicalAnalyzer_LEX.l)
 
 3. **Parsing**
    - [Predictive Parse Table Construction](Parsers/Predictive_Parse_Table.c)
    - [Predictive Parsing Algorithm](Parsers/Predictive_Parsing.c)
 
 4. **Syntax Trees**
-   - [Abstract Syntax Tree (Infix to Postfix)](SyntaxTrees/AST_Infix_To_Postfix.lex)
+   - [Abstract Syntax Tree (Infix to Postfix)](SyntaxTrees/AST_Infix_To_Postfix.l)
    - [Abstract Syntax Tree with YACC](SyntaxTrees/AST_Infix_To_Postfix.y)
 
 5. **Simple Calculators**
-   - [Simple Calculator (LEX)](SimpleCalculators/Simple_Calculator.lex)
+   - [Simple Calculator (LEX)](SimpleCalculators/Simple_Calculator.l)
    - [Simple Calculator (YACC)](SimpleCalculators/Simple_Calculator.y)
 
 6. **Three Address Code**
-   - [Three Address Code Generation](ThreeAddressCode/Three_Address_Code.lex)
+   - [Three Address Code Generation](ThreeAddressCode/Three_Address_Code.l)
    - [Three Address Code with YACC](ThreeAddressCode/Three_Address_Code.y)
 
 7. **Code Optimization**
