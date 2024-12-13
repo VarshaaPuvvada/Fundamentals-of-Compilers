@@ -17,9 +17,9 @@ bool isKeyword(char* str) {
             !strcmp(str, "int") || !strcmp(str, "double") || 
             !strcmp(str, "float") || !strcmp(str, "return") || 
             !strcmp(str, "char") || !strcmp(str, "case") || 
-            !strcmp(str, "switch") || !strcmp(str, "void")||
-            !strcmp(str, "printf") || !strcmp(str,"%d") ||
-            !strcmp(str,"%s")||!strcmp(str,"%c")||
+            !strcmp(str, "switch") || !strcmp(str, "void") ||
+            !strcmp(str, "printf") || !strcmp(str, "%d") ||
+            !strcmp(str, "%s") || !strcmp(str, "%c")|| 
             !strcmp(str,"#include") || !strcmp(str,"<stdio.h>"));
 }
 
@@ -48,9 +48,8 @@ bool isIdentifier(char* str) {
     return true;
 }
 
-bool semicolan(char ch)
-{
-    return(ch==';');
+bool isSemicolon(char ch) {
+    return (ch == ';');
 }
 
 bool isSeperator(char ch) {
@@ -60,62 +59,106 @@ bool isSeperator(char ch) {
             ch == '\t');
 }
 
-bool isStringLiteral(char ch)
-{
+bool isStringLiteral(char ch) {
     return (ch == '"');
 }
 
 void lexical_analyzer(char* code) {
-    char* token = strtok(code, " ");
-    while (token != NULL) {
-        if (isKeyword(token)) 
+    int len = strlen(code);
+    for (int i = 0; i < len; i++) 
+    {
+        if (isSeperator(code[i])) 
         {
-            printf("Keyword: %s\n", token);
-        } 
-        else if (isInteger(token)) 
-        {
-            printf("Integer: %s\n", token);
-        } 
-        else if (isOperator(token[0]) && strlen(token) == 1) 
-        {
-            printf("Operator: %s\n", token);
-        } 
-        else if (isIdentifier(token)) 
-        {
-            printf("Identifier: %s\n", token);
-        }
-        else if(semicolan(token[0]))
-        {   
-            printf("Semicolon/Seperator:%s\n",token);
-        } 
-        else if(isStringLiteral(token[0]))
-        {
-            char literal[100];
-            strcpy(literal, token);
-            token = strtok(NULL, "\"");
-            if (token != NULL) 
+            if (code[i] == ' ' || code[i] == '\n' || code[i] == '\t') 
             {
-                strcat(literal, " ");
-                strcat(literal, token);
-                strcat(literal, "\"");
+                continue;
+            }
+            printf("Seperator: %c\n", code[i]);
+        } 
+        else if (isStringLiteral(code[i])) 
+        {
+            int j = i + 1;
+            while (j < len && !isStringLiteral(code[j])) 
+            {
+                j++;
+            }
+            if (j < len) 
+            {
+                char literal[100];
+                strncpy(literal, code + i, j - i + 1);
+                literal[j - i + 1] = '\0';
                 printf("String Literal: %s\n", literal);
+                i = j;
+            }
+        } 
+        else if (isOperator(code[i])) 
+        {
+            printf("Operator: %c\n", code[i]);
+        } 
+        else if (isSemicolon(code[i])) 
+        {
+            printf("Semicolon/Separator: %c\n", code[i]);
+        }
+         else 
+         {
+            char token[100];
+            int j = 0;
+            while (i < len && !isSeperator(code[i]) && !isOperator(code[i]) && !isSemicolon(code[i])) 
+            {
+                token[j++] = code[i++];
+            }
+            token[j] = '\0';
+            i--;
+
+            if (isKeyword(token)) 
+            {
+                printf("Keyword: %s\n", token);
+            }
+             else if (isInteger(token)) 
+            {
+                printf("Integer: %s\n", token);
+            }
+            else if (isIdentifier(token)) 
+            {
+                printf("Identifier: %s\n", token);
+            } 
+            else {
+                printf("Unknown: %s\n", token);
             }
         }
-        else if(isSeperator(token[0]))
-        {
-            printf("Seperator:%s\n",token);
-        }
-        else {
-            printf("Unknown: %s\n", token);
-        }
-        token = strtok(NULL, " ");
     }
 }
 
 int main() {
-    char code[100];
+    char code[1000]="";
+    FILE *fptr, *fptr1;
+    fptr = fopen("C:\\Varshaa\\compiler design\\code1.txt", "w");
+    if(fptr == NULL)
+    {
+        printf("Error");
+        exit(1);
+    }
     printf("Enter the code:");//give space between every token
-    fgets(code,sizeof(code),stdin);
-    lexical_analyzer(code);
+    char line[200];
+    while(true)
+    {
+        fgets(line,sizeof(line),stdin);
+        if(strcmp(line,"\n")==0)
+        {
+            break;
+        }
+        fputs(line,fptr);
+    }
+    fclose(fptr);
+    char code1[1000];
+    fptr1 = fopen("C:\\Varshaa\\compiler design\\code1.txt", "r");
+    if (fptr1 == NULL) {
+        printf("Error opening the file\n");
+        return 1;
+    }
+    size_t bytesRead = fread(code1, sizeof(char), sizeof(code1) - 1, fptr);
+    code1[bytesRead] = '\0';
+    fclose(fptr1);
+    lexical_analyzer(code1);
     return 0;
 }
